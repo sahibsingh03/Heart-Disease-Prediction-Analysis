@@ -4,6 +4,5 @@ sklearn
 seaborn
 numpy
 matplotlib
-warnings
 os
-plotly
+
