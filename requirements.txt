@@ -4,5 +4,4 @@ sklearn
 seaborn
 numpy
 matplotlib
-os
 
