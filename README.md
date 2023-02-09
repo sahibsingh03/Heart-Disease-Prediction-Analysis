@@ -1,7 +1,9 @@
 # Heart-Disease-Prediction-Analysis
 
-This study determines if a patient could have a heart illness or not by using logistic regression to analyse a variety of patient data,
-including age, gender, and the sort of chest discomfort the patient is experiencing.
+The above project is a data analysis and machine learning study aimed at identifying correlations in a heart disease dataset. The dataset consists of over 500 patient records and the goal was to build a predictive model that can accurately interpret heart disease. To achieve this, the first step was to clean and prepare the data. This involved removing any anomaly outliers, stabilizing variables, and imputing any missing values.
+
+Once the data was cleaned, the next step was to apply Logistic Regression, a popular statistical method, to build the predictive model. The final model had a precision of 86%, which means that it was capable of correctly identifying heart disease 86% of the time. This project demonstrates the power of data analysis and machine learning in solving real-world problems and improving patient outcomes.
+
 
 You can have an idea by looking at the screenshots of the GUI created using streamlit.  
 
