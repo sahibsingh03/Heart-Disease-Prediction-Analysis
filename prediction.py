@@ -1,30 +1,22 @@
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
-import seaborn as sns
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib import rcParams
-import warnings
-warnings.filterwarnings('ignore')
+from matplotlib import pyplot as plt
+%matplotlib inline
 
-df=pd.read_csv('heart.csv')
+df=pd.read_csv("heart.csv")
+df.head()
+
+df.isnull().sum()
+
+from sklearn.model_selection import train_test_split
+
 x = df.drop(columns='target',axis=1)
-y = df['target']
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,stratify=y,random_state=2)
-model = LogisticRegression()
-model.fit(x_train, y_train)
+y=df['target']
 
-def predict(age,sex,cp,trestbp,chol,fbp,restecg,thalach,exang,oldpeak,slope,ca,thall):
-    input_data = (age,sex,cp,trestbp,chol,fbp,restecg,thalach,exang,oldpeak,slope,ca,thall)
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.1)
 
-# change the input data to a numpy array
-    input_data_as_numpy_array= np.asarray(input_data)
+from sklearn.linear_model import LogisticRegression
+model=LogisticRegression()
 
-# reshape the numpy array as we are predicting for only on instance
-    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+model.fit(x_train,y_train)
 
-    prediction = model.predict(input_data_reshaped)
-    return prediction
-
+model.score(x_test,y_test)
